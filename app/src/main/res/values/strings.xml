@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Max-E1 Controller</string>
+
+    <string name="punch">Punch</string>
+    <string name="side_punch">Side\nPunch</string>
+    <string name="side_step_punch">Side Step\nPunch</string>
+    <string name="forward_punch">Forward\nPunch</string>
+    <string name="double_punch">Double\nPunch</string>
+    <string name="duck">Duck</string>
+    <string name="fight_pose">Fight\nPose</string>
+    <string name="standing">Standing</string>
+    <string name="enable_all_torque">On All\nTorque</string>
+    <string name="disable_all_torque">Off All\nTorque</string>
+    <string name="get_up">GetUp</string>
+    <string name="defense">Defense</string>
+    <string name="left_side_punch">LeftPunch</string>
+    <string name="right_side_punch">LeftPunch</string>
+    <string name="ultimate">LeftPunch</string>
+    <string name="fall">fall</string>
+    <string name="disable_top_torque">Off Top\nTorque</string>
+    <string name="fake_alarm">LeftPunch</string>
+    <string name="title_activity_bluetooth">Bluetooth</string>
+    <string name="tab_text_1">Paired</string>
+    <string name="tab_text_2">Bluetooth Classic</string>
+    <string name="tab_text_3">Bluetooth LE</string>
+
+
+</resources>

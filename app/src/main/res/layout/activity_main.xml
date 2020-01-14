@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/padding_space"
+    android:paddingBottom="@dimen/padding_space"
+    android:paddingLeft="@dimen/padding_space"
+    android:paddingRight="@dimen/padding_space"
+    android:background="@color/black">
+
+
+    <Button
+        android:id="@+id/mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/circle_button"
+        android:layout_centerInParent="true"
+        android:clickable="true"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="Demo"
+        android:textSize="10sp"/>
+
+    <Button
+        android:id="@+id/forward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/mode"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/dir_button"
+        android:clickable="true"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:rotation="0" />
+
+    <Button
+        android:id="@+id/down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dir_button"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:rotation="180"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/mode"
+        android:clickable="true"/>
+
+    <Button
+        android:id="@+id/left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dir_button"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:rotation="270"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/mode"
+        android:clickable="true"/>
+
+    <Button
+        android:id="@+id/right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dir_button"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:rotation="90"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/mode"
+        android:clickable="true"/>
+
+    <Button
+        android:id="@+id/left_side_step"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/side_button"
+        android:rotation="180"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:layout_toStartOf="@id/forward"
+        android:layout_above="@id/left"
+        android:clickable="true"/>
+
+    <Button
+        android:id="@+id/right_side_step"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/side_button"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:layout_toEndOf="@id/forward"
+        android:layout_above="@id/right"
+        android:clickable="true"/>
+
+    <Button
+        android:id="@+id/left_turn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/turn_button"
+        android:rotation="292.5"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:scaleX="-1"
+        android:layout_toStartOf="@id/down"
+        android:layout_below="@id/left"/>
+
+    <Button
+        android:id="@+id/right_turn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/turn_button"
+        android:rotation="67.5"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:layout_toEndOf="@id/down"
+        android:layout_below="@id/right"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/debugText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/forward"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/debugText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/down"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/bluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:background="@drawable/bluetooth_button_black"
+        android:shadowColor="@color/silver"/>
+
+    <Button
+        android:id="@+id/ps4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:background="@drawable/ps4_button_black"/>
+    <!-- Attack Motion-->
+
+        <!-- Left -->
+    <Button
+        android:id="@+id/left_punch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/left_side_step_punch"
+        android:layout_centerVertical="true"
+        android:background="@drawable/func_button"
+        android:text="@string/punch"
+        android:textSize="@dimen/func_button_text_size"
+        android:textColor="@color/gold"/>
+
+    <Button
+        android:id="@+id/left_forward_punch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/left_side_punch"
+        android:layout_above="@id/left_punch"
+        android:background="@drawable/func_button"
+        android:text="@string/forward_punch"
+        android:textSize="@dimen/func_button_text_size"
+        android:textColor="@color/gold"/>
+
+    <Button
+        android:id="@+id/left_side_punch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_above="@id/left_side_step_punch"
+        android:background="@drawable/func_button"
+        android:text="@string/side_punch"
+        android:textSize="@dimen/func_button_text_size"
+        android:textColor="@color/gold"/>
+
+    <Button
+        android:id="@+id/left_side_step_punch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/func_button"
+        android:text="@string/side_step_punch"
+        android:textSize="@dimen/func_button_text_size"
+        android:textColor="@color/gold"/>
+        <!-- Right -->
+    <Button
+        android:id="@+id/right_punch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/right_side_step_punch"
+        android:layout_centerVertical="true"
+        android:background="@drawable/func_button"
+        android:text="@string/punch"
+        android:textSize="@dimen/func_button_text_size"
+        android:textColor="@color/gold"/>
+
+    <Button
+        android:id="@+id/right_forward_punch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/right_side_punch"
+        android:layout_above="@id/right_punch"
+        android:background="@drawable/func_button"
+        android:text="@string/forward_punch"
+        android:textSize="@dimen/func_button_text_size"
+        android:textColor="@color/gold"/>
+
+    <Button
+        android:id="@+id/right_side_punch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/right_side_step_punch"
+        android:background="@drawable/func_button"
+        android:text="@string/side_punch"
+        android:textSize="@dimen/func_button_text_size"
+        android:textColor="@color/gold"/>
+
+    <Button
+        android:id="@+id/right_side_step_punch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/func_button"
+        android:text="@string/side_step_punch"
+        android:textSize="@dimen/func_button_text_size"
+        android:textColor="@color/gold"/>
+        <!-- Forward -->
+    <Button
+        android:id="@+id/forward_double_punch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/func_button"
+        android:text="@string/double_punch"
+        android:textSize="@dimen/func_button_text_size"
+        android:textColor="@color/gold"/>
+
+    <!-- Motion -->
+
+    <Button
+        android:id="@+id/duck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/func_button"
+        android:text="@string/duck"
+        android:textSize="@dimen/func_button_text_size"
+        android:textColor="@color/silver"/>
+
+    <Button
+        android:id="@+id/standing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/left_side_step_punch"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/func_button"
+        android:text="@string/standing"
+        android:textSize="@dimen/func_button_text_size"
+        android:textColor="@color/cyan"/>
+
+    <Button
+        android:id="@+id/fight_pose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/func_button"
+        android:layout_toEndOf="@id/standing"
+        android:layout_below="@id/left_punch"
+        android:layout_marginTop="10dp"
+        android:text="@string/fight_pose"
+        android:textColor="@color/cyan"
+        android:textSize="@dimen/func_button_text_size" />
+
+    <Button
+        android:id="@+id/fall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/func_button"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@id/forward_double_punch"
+        android:text="@string/fall"
+        android:textColor="@color/red"
+        android:textSize="@dimen/func_button_text_size" />
+
+    <Button
+        android:id="@+id/get_up_front"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/func_button"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@id/forward_double_punch"
+        android:text="@string/get_up"
+        android:textColor="@color/red"
+        android:textSize="@dimen/func_button_text_size" />
+
+    <Button
+        android:id="@+id/defense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/func_button"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@id/duck"
+        android:text="@string/defense"
+        android:textColor="@color/red"
+        android:textSize="@dimen/func_button_text_size" />
+
+    <Button
+        android:id="@+id/get_up_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/func_button"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@id/duck"
+        android:text="@string/get_up"
+        android:textColor="@color/red"
+        android:textSize="@dimen/func_button_text_size" />
+
+    <Button
+        android:id="@+id/enable_all_torque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/func_button"
+        android:layout_below="@id/right_punch"
+        android:layout_toStartOf="@id/disable_all_torque"
+        android:layout_marginTop="10dp"
+        android:text="@string/enable_all_torque"
+        android:textColor="@color/olive"
+        android:textSize="@dimen/func_button_text_size" />
+
+    <Button
+        android:id="@+id/disable_all_torque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/func_button"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/right_side_step_punch"
+        android:layout_marginTop="10dp"
+        android:text="@string/disable_all_torque"
+        android:textColor="@color/magenta"
+        android:textSize="@dimen/func_button_text_size" />
+
+    <Button
+        android:id="@+id/disable_top_torque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/func_button"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/disable_all_torque"
+        android:text="@string/disable_top_torque"
+        android:textColor="@color/magenta"
+        android:textSize="@dimen/func_button_text_size" />
+</RelativeLayout>
