@@ -77,7 +77,9 @@ public class PairedDevice extends Fragment
                     {
                         //Toast.makeText(activity,getData(position),Toast.LENGTH_SHORT).show();
                         gv.getBluetooth().bluetoothDevice = gv.getBluetooth().bluetoothAdapter.getRemoteDevice(bluetoothDeviceAddress.get(position));
-                        gv.getBluetooth().ConnectLE();
+                        if (!gv.getBluetooth().isConnected)
+                            gv.getBluetooth().ConnectLE();
+                        else gv.getBluetooth().DisConnectLE();
                     }
                 });
             }

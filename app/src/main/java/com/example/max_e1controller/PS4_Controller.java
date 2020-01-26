@@ -180,9 +180,9 @@ public class PS4_Controller {
             public int Axis_Y;
         }
     }
-    public PS4_Controller()
+    public PS4_Controller(Activity act)
     {
-
+        activity = act;
     }
 
     static public Button DecodeKeyCode(int keyCode)
@@ -384,40 +384,33 @@ public class PS4_Controller {
         return Button.NO_GEN_KEY;
     }
 
-    public boolean ConnectController()
+    public boolean VerifyController()
     {
 
         // Get PS4 Controller ID
-        ArrayList<Integer> gameControllerDeviceIds = new ArrayList<Integer>();
+        try {
+            ArrayList<Integer> gameControllerDeviceIds = new ArrayList<Integer>();
 
-        int[] deviceIds = InputDevice.getDeviceIds();
-        for (int deviceId : deviceIds)
-        {
-            InputDevice dev = InputDevice.getDevice(deviceId);
-            int sources = dev.getSources();
-            if (((sources & InputDevice.SOURCE_GAMEPAD) == InputDevice.SOURCE_GAMEPAD)
-                    && ((sources & InputDevice.SOURCE_JOYSTICK) == InputDevice.SOURCE_JOYSTICK)
-                    && ((sources & InputDevice.SOURCE_GAMEPAD) == InputDevice.SOURCE_GAMEPAD))
-            {
-                if (!gameControllerDeviceIds.contains(deviceId))
-                {
-                    gameControllerDeviceIds.add(deviceId);
+            int[] deviceIds = InputDevice.getDeviceIds();
+            for (int deviceId : deviceIds) {
+                InputDevice dev = InputDevice.getDevice(deviceId);
+                int sources = dev.getSources();
+                if (((sources & InputDevice.SOURCE_GAMEPAD) == InputDevice.SOURCE_GAMEPAD)
+                        && ((sources & InputDevice.SOURCE_JOYSTICK) == InputDevice.SOURCE_JOYSTICK)
+                        && ((sources & InputDevice.SOURCE_GAMEPAD) == InputDevice.SOURCE_GAMEPAD)) {
+                    if (!gameControllerDeviceIds.contains(deviceId)) {
+                        gameControllerDeviceIds.add(deviceId);
+                    }
                 }
             }
+            controllerID = gameControllerDeviceIds.get(0);
+            return true;
         }
-        if (gameControllerDeviceIds.isEmpty())
+        catch (Exception e)
         {
-
-            Toast.makeText(activity,"PS4 Controller Not Found!", Toast.LENGTH_LONG).show();
-            return false;
+            Toast.makeText(activity,"Input Device Not Found!",Toast.LENGTH_SHORT).show();
         }
-        if (gameControllerDeviceIds.size() > 1)
-        {
-            Toast.makeText(activity,"Ambiguous Controller!",Toast.LENGTH_LONG).show();
-            return false;
-        }
-        controllerID = gameControllerDeviceIds.get(0);
-        return true;
+        return false;
     }
 
 

@@ -7,7 +7,7 @@
     <string name="forward_punch">Forward\nPunch</string>
     <string name="double_punch">Double\nPunch</string>
     <string name="duck">Duck</string>
-    <string name="fight_pose">Fight\nPose</string>
+    <string name="fight_pose">Fight</string>
     <string name="standing">Standing</string>
     <string name="enable_all_torque">On All\nTorque</string>
     <string name="disable_all_torque">Off All\nTorque</string>

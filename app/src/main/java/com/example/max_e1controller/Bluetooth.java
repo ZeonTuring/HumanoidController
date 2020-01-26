@@ -253,10 +253,12 @@ public class Bluetooth{
         {
             bluetoothGatt.disconnect();
             bluetoothGatt.close();
+            isConnected = false;
             return true;
         }
         catch (Exception e)
         {
+            isConnected = true;
             return false;
         }
 
